@@ -1,5 +1,5 @@
 ### Write a C program to demonstrate dynamic memory allocation using malloc().
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -29,9 +29,9 @@ int main()
          return o;
 }
 
-
+```
 ### Implement a C program to allocate memory for an array dynamically using calloc().
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -68,9 +68,9 @@ int main()
         return 0;
 }
 
-
+```
 #### Write a C program to resize dynamically allocated memory using realloc().
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -122,10 +122,10 @@ int main()
         return 0;
 }
 
-
+```
 
 ### Develop a program in C to allocate memory for a linked list node dynamically.
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -143,10 +143,10 @@ int main()
         return 0;
 }
 
-
+```
 
 #### Implement a C program to simulate memory allocation using the first-fit algorithm.
-
+```c
 #include<stdio.h>
 void firstfit(int blocksize[],int n,int processsize[,int n])
 {
@@ -186,9 +186,9 @@ int main()
 }
 
 
-
+```
 ### Write a C program to simulate memory allocation using the best-fit algorithm.
-
+```c
 
 #include<stdio.h>
 void bestfit(int blocksize[],int m,int processsize[],int n)
@@ -234,10 +234,10 @@ int main()
 }
 
 
-
+```
 #### Develop a C program to simulate memory allocation using the worst-fit algorithm.
 
-
+```c
 #include<stdio.h>
 void bestfit(int blocksize[],int m,int processsize[],int n)
 {
@@ -283,10 +283,10 @@ void bestfit(int blocksize[],int m,int processsize[],int n)
 
 
 
-
+```
 
 ### Implement a C program to simulate memory allocation using the next-fit algorithm.
-
+```c
 #include<stdio.h>
 void(int blocksize[],int m,int processsize[],int n)
 {
@@ -330,11 +330,11 @@ void(int blocksize[],int m,int processsize[],int n)
 }
 
 
-
+```
 
 
 ### Develop a C program to implement a memory allocator using a custom memory management algorithm.
-
+```c
 #include<stdio.h>
 #include<string.h>
 #define SIZE 100
@@ -362,10 +362,10 @@ int main()
 }
 
 
-
+```
 
 #### Write a C program to demonstrate memory mapping using mmap().
-
+```c
 #include<stdio.h>
 #include<sys/mman.h>
 #include<fcntl.h>
@@ -381,11 +381,11 @@ int main()
         return 0;
 }
 
-
+```
 
 
 ### Implement a C program to read from and write to a memory-mapped file.
-
+```c
 
 #include<unistd.h>
 #include<sys/mman.h>
@@ -400,27 +400,31 @@ int main()
         return 0;
 }
 
-
+```
 
 
 #### Develop a C program to demonstrate shared memory usage using shmget() and shmat().
-
+```c
 #include<stdio.h>                                                       
 #include<sys/ipc.h>                                                    
 #include<sys/shm.h>                                                    
 int main()
 {  
 int id=shmget(1234,1024,IPC_CREAT|0666);                                
-char *data=(char *)shmat(id,NULL,0);                                    sprintf(data,"hello world");                                            printf("%s\n",data);                                                    shmdt(data);                                                            shmctl(id,IPC_RMID,NULL);                                               
+char *data=(char *)shmat(id,NULL,0);
+sprintf(data,"hello world");
+printf("%s\n",data); 
+shmdt(data);
+shmctl(id,IPC_RMID,NULL);                                               
 return 0;                                                      
 }                         
 
-
+```
 
 
 ### Write a C program to create a shared memory segment and synchronize access using semaphores.
 
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -476,6 +480,6 @@ int main()
 }
 
 
-
+```
 
 
