@@ -1,5 +1,5 @@
 ### Write a C program to create a thread that prints "Hello, World!"?
-
+```c
 #include<stdio.h>
 #include<pthread.h>
 void* print_hello(void *args)
@@ -14,10 +14,7 @@ int main()
         pthread_join(tid,NULL);
         return 0;
 }
-
-
-
-
+```
 ###  Modify the above program to create multiple threads, each printing its own message?
 
 #include<stdio.h>
