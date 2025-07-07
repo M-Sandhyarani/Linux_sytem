@@ -1,10 +1,12 @@
 ### Why are we using pthread_create() instead of clone() for creating threads?
 ```c
-pthread_create() is a high-level, standardized API defined by POSIX for thread creation. It abstracts the complexity of clone() (a Linux-specific, low-level system call) and provides portability, safety, and ease of use.
+pthread_create() is a high-level, standardized API defined by POSIX for thread creation.
+It abstracts the complexity of clone() (a Linux-specific, low-level system call) and provides portability, safety, and ease of use.
 ```
 #### Why does a stack grow?
 ```c
-A stack grows (usually downward in memory) when a function is called and local variables or return addresses are pushed onto the stack. It allows nested function calls and maintains execution context.
+A stack grows (usually downward in memory) when a function is called and local variables or return addresses are pushed onto the stack.
+ It allows nested function calls and maintains execution context.
 ```
 #### What segments are shared by multiple threads within a process?
 ```c
@@ -122,10 +124,11 @@ int pthread_create(
 ```
 #### Application of pthread_mutex_timedlock():
 ```c
-Used when you want to wait for a lock only up to a certain time. Useful in real-time or time-sensitive applications.
+Used when you want to wait for a lock only up to a certain time.
+Useful in real-time or time-sensitive applications.
 ```
 #### What is mutual exclusion?
 ```c
-A concurrency control technique to prevent multiple threads from accessing shared resources at the same time. Achieved using mutexes, semaphores, etc.
+A concurrency control technique to prevent multiple threads from accessing shared resources at the same time.
+ Achieved using mutexes, semaphores, etc.
 ```
-``
