@@ -27,7 +27,8 @@ The OS loads the program, initializes stack, heap, and other runtime structures,
 ```
 #### What happens when the CPU stops executing?
 ```c
-The system enters an idle state or halts. In multiprogramming OS, control is transferred to another process/thread using a context switch.
+The system enters an idle state or halts.
+In multiprogramming OS, control is transferred to another process/thread using a context switch.
 ```
 ##### During a context switch, which instruction is used to copy CPU registers to the PCB (Process Control Block)?
 ```c
