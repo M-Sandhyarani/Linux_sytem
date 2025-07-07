@@ -1,5 +1,5 @@
 ### Implement a program that uses pipes for communication between a parent and child process. Show how data can be passed between processes using pipes.
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<string.h>
@@ -26,9 +26,9 @@ int main()
         return 0;
 }
 
-
+```
 ### Create a program where two processes communicate synchronously using pipes. Ensure that one process waits for the other to finish before proceeding.
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<string.h>
@@ -56,11 +56,10 @@ int main()
         }
         return 0;
 }
+```
 
-
-#### Implement a program that uses Named pipes for communication between two
-processes.
-
+#### Implement a program that uses Named pipes for communication between two processes.
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/stat.h>
@@ -88,9 +87,11 @@ int main()
         return 0;
 }
 
+```
+
 
 ###  Write a C program to create a message queue using the msgget system call. Ensure that the program checks for errors during the creation process.
-
+```c
 
 #include<stdio.h>
 #include<sys/ipc.h>
@@ -110,11 +111,11 @@ int main()
 }
 
 
-
+```
 
 ### Develop two separate C programs, one for sending messages and the other for receiving messages through a created message queue.
 
-/*
+```c
 #include<stdio.h>
 #include<sys/ipc.h>
 #include<string.h>
@@ -133,9 +134,8 @@ int main()
         printf("message sent.\n");
         return 0;
 }
-*/
 
-/*
+
 #include<stdio.h>
 #include<sys/ipc.h>
 #include<sys/msg.h>
@@ -155,13 +155,13 @@ int main()
         msgctl(msdig,IPC_RMID,NULL);
         return 0;
 }
-*/
+```
 
 
 
 ### Create a program to remove an existing message queue using the msgctl system call. Ensure that the program prompts the user for confirmation before deleting the message queue.
 
-
+```c
 #include<stdio.h>
 #include<sys/ipc.h>
 #include<sys/msg.h>
@@ -185,12 +185,12 @@ int main()
 }
 
 
-
+```
 
 
 
 ### Write a C program that initializes a shared memory segment using shmget.
-
+```c
 #include<stdio.h>
 #include<sys/ipc.h>
 #include<sys/shm.h>
@@ -208,9 +208,9 @@ int main()
 }
 
 
-
+```
 #### Develop a program that attaches to a previously created shared memory segment using shmat and detaches using shmdt.
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<string.h>
@@ -228,9 +228,9 @@ int main()
 
 
 
-
+```
 ### Create a program that forks multiple processes, and each process communicates using shared memory.
-
+```c
 #include<stdio.h>
 #include<string.h>
 #include<sys/ipc.h>
@@ -254,13 +254,13 @@ int main()
         }
         return 0;
 }
-
+```
 
 
 
 ### Write a program that dynamically creates shared memory segments based on user input.
 
-
+```c
 #include<stdio.h>
 #include<sys/shm.h>
 #include<sys/ipc.h>
@@ -281,11 +281,11 @@ int main()
         return 0;
 }
 
-
+```
 
 ### Create a program that monitors and displays the usage statistics ofshared memory segments, such as the amount of memory used and the number of attached processes.
 
-
+```c
 #include<stdio.h>
 #include<sys/shm.h>
 #include<sys/ipc.h>
@@ -310,12 +310,12 @@ int main()
         return 0;
 }
 
-
+```
 
 
 
 #### Design a program that dynamically resizes a shared memory segment based on changing requirements.
-
+```c
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -347,13 +347,13 @@ int main()
 }
 
 
-
+```
 
 
 
 ### Write a C program that uses semget to create a new semaphore set
 
-
+```c
 #include<stdio.h>
 #include<sys/sem.h>
 #include<sys/ipc.h>
@@ -379,9 +379,9 @@ int main()
 
 
 
-
+```
 ##### Create a multithreaded program where threads synchronize using semaphore sets.
-
+```c
 
 #include<stdio.h>
 #include<sys/ipc.h>
@@ -426,12 +426,12 @@ int main()
         semctl(semid,0,IPC_RMID);
         return 0;
 }       
-
+```
 
 
 ####Create a program with two processes that perform semaphore operations (wait andsignal) on a semaphore set using semop.
 
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/ipc.h>
@@ -472,10 +472,11 @@ int main()
         }
         return 0;
 }
+```
 
 #### Write a program that performs control operations on the semaphore set using semctl.
 
-
+```c
 #include<stdlib.h>
 #include<sys/ipc.h>
 #include<sys/sem.h>
@@ -494,9 +495,9 @@ int main()
         return 0;
 }
 
-
+```
 #### Write a program where multiple processes compete for access to a critical section using semaphores to ensure mutual exclusion.
-
+```c
 #include<stdio.h>
 #include<sys/wait.h>
 #include<sys/sem.h>
@@ -536,9 +537,9 @@ int main()
         return 0;
 }
 
-
+```
 ### Write a C program to create a pipe and pass an array of integers from the parent process to the child process through the pipe.
-
+```c
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -584,10 +585,10 @@ int main()
 
 
 
-
+```
 
 #### Develop a program that uses pipes for bidirectional communication between two processes, where each process can send and receive messages.
-
+```c
 #include<string.h>
 #include<sys/wait.h>
 #include<stdlib.h>
@@ -625,10 +626,10 @@ int main()
         return 0;
 }
 
-
+```
 
 ### Create a C program where multiple processes write data to a named pipe, and another process reads from the named pipe and displays the received data.
- 
+ ```c
 (writer.c)
 #include<stdio.h>
 #include<fcntl.h>
@@ -666,10 +667,11 @@ int main()
         return 0;
 }
 
+```
 
 ### Implement a program where two processes exchange messages through a named pipe until a termination signal is received.
 
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<fcntl.h>
@@ -711,9 +713,11 @@ int main()
 }
 
 
+```
+
 
 ### Develop a C program that acts as a server, continuously reading requests from a named pipe, and a client program that sends requests to the server through the same named pipe
-
+```c
 (server)
 #include<stdio.h>
 #include<unistd.h>
@@ -758,10 +762,12 @@ int main()
 }
 
 
+```
+
 
 ### Develop a program where multiple processes read from and write to a shared memory segment, synchronizing their access using semaphores.
 
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -810,10 +816,10 @@ int main()
         printf("final:%d\n",*data);
         return 0;
 }
-
+```
 
 #### Create a C program where the parent process creates a shared memory segment, writes data into it, and waits for the child process to read the data from the shared memory.
-
+```c
 #include<stdio.h>
 #include<string.h>
 #include<sys/wait.h>
@@ -842,10 +848,12 @@ int main()
 }
 
 
+```
+
 
 #### Write a program where multiple processes cooperate to calculate the sum of a large array of numbers stored in a shared memory segment.
 
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/wait.h>
@@ -896,10 +904,10 @@ int main()
         return 0;
 }
 
-
+```
 
 #### Write a program where two processes communicate through a message queue. One process sends a message containing a string to the other process, which receives and prints the message.
-
+```c
 
 
 #include<stdio.h>
@@ -922,11 +930,11 @@ int main()
                 msgrcv(id,&m,sizeof(m.txt),1,0),printf("%s\n",m.txt);
 }
 
-
+```
 
 ### Create a program where multiple processes coordinate access to a shared resource using semaphores(system v). Simulate a scenario where processes request and release access to the resource with proper synchronization
 
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -977,11 +985,11 @@ int main()
 }
 
 
-
+```
 
 #### Develop a program where two processes share an integer value stored in a shared memory segment. One process increments the value and the other process ds decrements it, with proper synchronization
 
-
+```c
 #include<stdio.h>
 #include<sys/ipc.h>
 #include<sys/shm.h>
@@ -1036,10 +1044,11 @@ int main()
 
 
 
+```
 
 ### Design a program where multiple processes are forked and synchronization is achieved using semaphores
 
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/ipc.h>
@@ -1086,10 +1095,12 @@ int main()
                 return 0;
 }
 
+```
+
 
 ### Design a program that uses a message queue for synchronization between multiple processes.
 
-
+```c
 #include<stdio.h>
 #include<sys/msg.h>
 #include<unistd.h>
@@ -1113,3 +1124,4 @@ int main()
         msgctl(id,IPC_RMID,NULL);
 }
 
+```
