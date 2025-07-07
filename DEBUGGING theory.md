@@ -1,11 +1,10 @@
-1. What is meant by debugging?
+#### What is meant by debugging?
 ```c
 Debugging is the process of identifying, analyzing, and fixing bugs (errors) or unexpected behavior in software or hardware.
 ```
 
-
-2. What are the types of debugging tools?
-   ```c
+###  What are the types of debugging tools?
+```c
 Debugging tools can be broadly categorized as:
 - Software Debuggers: GDB, LLDB, WinDbg
 - Memory Debuggers: Valgrind, AddressSanitizer
@@ -15,8 +14,7 @@ Debugging tools can be broadly categorized as:
 - IDE Debuggers: Eclipse, Visual Studio
 
 ```
-
-3. Why do we use debugging?
+#### Why do we use debugging?
 ```c
 We use debugging to:
 - Identify and fix errors in the program
@@ -24,9 +22,7 @@ We use debugging to:
 - Improve code quality
 - Ensure reliability and correctness
 ```
-
-
-4. What is the difference between hardware debugging and software debugging?
+#### What is the difference between hardware debugging and software debugging?
 
 ```c
           Feature               Hardware Debugging                                 Software Debugging                    
@@ -39,21 +35,19 @@ We use debugging to:
 
 
 ```
-
-5. What command is used to add debugging information?
+### What command is used to add debugging information?
    ```c
-gcc -g filename.c -o output
-```
-
-7. What are the compilation stages?
+   gcc -g filename.c -o output
+  ```
+#### What are the compilation stages?
 ```c
-Ans:  Preprocessing
+    Ans:  Preprocessing
         Compilation
          Assembly
          Linking
 ```
 
-8. How do you stop the process after the 1st stage of compilation, and what happens in this stage?
+### How do you stop the process after the 1st stage of compilation, and what happens in this stage?
 ```c
 Stage: Preprocessing
 Command:
@@ -62,7 +56,7 @@ What happens: Header files are expanded, macros are replaced.
 
 ```
 
-9. How do you stop the process after the 2nd stage of compilation, and what happens in this stage?
+### How do you stop the process after the 2nd stage of compilation, and what happens in this stage?
 ```c
 Stage: Compilation
 Command:
@@ -70,8 +64,7 @@ gcc -S file.c -o file.s
 What happens: C code is translated to assembly code.
 
 ```
-
-10. How do you stop the process after the 3rd stage of compilation, and what happens in this stage?
+#### How do you stop the process after the 3rd stage of compilation, and what happens in this stage?
 ```c
 Stage: Assembly
 Command:
@@ -79,75 +72,66 @@ gcc -c file.c -o file.o
 What happens: Assembly code is converted into object code (machine code without linking).
 
 ````
-
-11. How do you generate assembly code from the executable file?
+### How do you generate assembly code from the executable file?
 ```c
 Use objdump:
 objdump -d executable > asm_output.txt
 
 ```
-
-12. What is the use of Strace?
+#### What is the use of Strace?
 ```c
 strace traces system calls made by a program. Useful to debug runtime issues like file access, permissions, etc.
 
 ```
-
-13. What is the use of Ltrace?
+#### What is the use of Ltrace?
 ```c
 ltrace traces library calls (like printf, malloc, etc.) made by a program.
 
 ```
 
-14. How do you see the source code in GDB?
+#### How do you see the source code in GDB?
 ```c
       list
 ```
-
-15. How do you see the assembly code in GDB?
+##### How do you see the assembly code in GDB?
 ```c
       disassemble
 
 ```
-
-16. How do you check if a particular variable is changing or not every time in GDB?
+### How do you check if a particular variable is changing or not every time in GDB?
 ```c
       Use a watchpoint:
        watch variable_name
 
 ```
-
-17. What instruction is given to set breakpoints, and why do we need them?
+ #### What instruction is given to set breakpoints, and why do we need them?
 ```c
 break <function_name or line_number>
 Breakpoints are used to pause execution at specific points to inspect state.
 
 ```
-
-18. How do you check how many breakpoints a program contains?
+#### How do you check how many breakpoints a program contains?
 ```c
 info breakpoints
 
 ```
 
-19. What is meant by a backtrace?
+##### What is meant by a backtrace?
 ```c
 A backtrace shows the call stack — the sequence of function calls that led to the current point. In GDB:
 backtrace
 
 ```
 
-20. What instruction is used to move into a function call in GDB?
+#### what instruction is used to move into a function call in GDB?
 ```c
     step
 ```
-
-22. What is meant by memory leakage?
+#### What is meant by memory leakage?
 ```c
 Memory leakage occurs when a program allocates memory but fails to release it. Over time, this wastes system memory.
 ```
-
-23. What tools do we have to check for memory leakage?
+#### What tools do we have to check for memory leakage?
 ```c
 - Valgrind
 - AddressSanitizer (ASan)
