@@ -1,6 +1,7 @@
 ### What is meant by an IPC Mechanism? 
 ```c
-IPC (Inter-Process Communication) refers to methods used by processes (independent executing programs) to exchange data and signals with each other. Since each process has its own memory space, IPC provides a way for them to communicate and coordinate.
+IPC (Inter-Process Communication) refers to methods used by processes (independent executing programs) to exchange data and signals with each other.
+Since each process has its own memory space, IPC provides a way for them to communicate and coordinate.
 ```
 
 
@@ -96,7 +97,8 @@ IPC-related blocking calls include:
 
 ### What is meant by Named Pipes? 
 ```c
-Named Pipes (also called FIFOs) are a type of IPC mechanism that allows unrelated processes to communicate. Unlike unnamed pipes, named pipes have a name in the file system, so different processes can open and use them.
+Named Pipes (also called FIFOs) are a type of IPC mechanism that allows unrelated processes to communicate.
+Unlike unnamed pipes, named pipes have a name in the file system, so different processes can open and use them.
 ```
 
 ### Where is the FIFO Object created? 
@@ -198,16 +200,16 @@ It allows fast and direct communication by reading/writing the same memory.
  Useful when speed is critical (e.g., multimedia, games).
 ```
 ### Difference between Shared Memory and Message Queues
+```c
+ Feature              Shared Memory                 Message Queue           
+ -------------------  -------------------------  ----------------------- 
+      Speed           Very fast (direct access)     Slower (kernel-managed) 
+    Data Format         Raw memory (user-defined)     Message structures      
+    Synchronization     Requires semaphores/mutex     Handled by queue itself 
+      Data Size         Good for large data            Good for small messages 
+      Complexity        More complex (needs sync)      Easier to use           
 
-| Feature             | Shared Memory             | Message Queue           |
-| ------------------- | ------------------------- | ----------------------- |
-| **Speed**           | Very fast (direct access) | Slower (kernel-managed) |
-| **Data Format**     | Raw memory (user-defined) | Message structures      |
-| **Synchronization** | Requires semaphores/mutex | Handled by queue itself |
-| **Data Size**       | Good for large data       | Good for small messages |
-| **Complexity**      | More complex (needs sync) | Easier to use           |
-
-
+```
 #### What is use of stat command? 
 ```c
 The stat command in Linux is used to display detailed information about a file or directory.
@@ -280,15 +282,15 @@ A mutex (mutual exclusion lock) is used to protect critical sections so only one
  ```
 
 ### What is the difference between mutex locks and semaphores?
+```c
+  Feature      Mutex Lock                              Semaphore                    
+ -----------  --------------------------------------  ---------------------------- 
+ Value Range  Binary (0 or 1)                         Integer (0 or more)          
+ Ownership    Has ownership (only locker can unlock)  No ownership                 
+ Usage        Thread-level locking                    Inter-process or thread sync 
+ Type         Lighter weight                          More general purpose         
 
- | Feature     | Mutex Lock                             | Semaphore                    |
-| ----------- | -------------------------------------- | ---------------------------- |
-| Value Range | Binary (0 or 1)                        | Integer (0 or more)          |
-| Ownership   | Has ownership (only locker can unlock) | No ownership                 |
-| Usage       | Thread-level locking                   | Inter-process or thread sync |
-| Type        | Lighter weight                         | More general purpose         |
-
-
+```
 #### What is meant by Race Condition? 
 ```c
 A race condition occurs when multiple processes or threads access shared data at the same time and outcome depends on timing.
@@ -306,21 +308,22 @@ Conditions for deadlock:
 
 ### What is meant by Critical Section?
 ```c
-A critical section is a section of code that accesses shared resources (memory, file, etc.), and must not be executed by more than one thread/process at a time.
+A critical section is a section of code that accesses shared resources (memory, file, etc.),
+and must not be executed by more than one thread/process at a time.
 ```
 
 ### What is the difference between system v and POSIX?
+```
+
+ Feature      System V IPC                  POSIX IPC                         
+ -----------  ----------------------------  --------------------------------- 
+ APIs         `semget`, `msgget`, `shmget`  `sem_open`, `mq_open`, `shm_open` 
+ Naming       Integer keys (`ftok`)         Named using strings               
+ Portability  Less portable                 More portable (POSIX-compliant)   
+ Flexibility   More legacy style             Modern and easier to use          
 
 
-| Feature     | System V IPC                 | POSIX IPC                         |
-| ----------- | ---------------------------- | --------------------------------- |
-| APIs        | `semget`, `msgget`, `shmget` | `sem_open`, `mq_open`, `shm_open` |
-| Naming      | Integer keys (`ftok`)        | Named using strings               |
-| Portability | Less portable                | More portable (POSIX-compliant)   |
-| Flexibility | More legacy style            | Modern and easier to use          |
-
-
-
+```
 ### Describe the steps involved in creating and using a named pipe (FIFO) for IPC
 ```c
 Create FIFO:
@@ -356,7 +359,8 @@ Parent Process (Reader):
 
 ## Describe the steps involved in creating and using a pipe for IPC
 ```c
-A pipe is a unidirectional communication channel used between related processes (typically parent-child). It allows one-way data flow: one process writes, another reads.
+A pipe is a unidirectional communication channel used between related processes (typically parent-child).
+It allows one-way data flow: one process writes, another reads.
 Steps to Create and Use a Pipe for IPC
 Step 1: Create the Pipe
             int fd[2];
