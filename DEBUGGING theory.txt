@@ -1,6 +1,7 @@
 1. What is meant by debugging?
+```c
 Debugging is the process of identifying, analyzing, and fixing bugs (errors) or unexpected behavior in software or hardware.
-
+```
 
 
 2. What are the types of debugging tools?
