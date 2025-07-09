@@ -314,7 +314,9 @@ Risk of deadlocks, reentrancy issues, and race conditions if not properly synchr
 ```
 ## What is a race condition? Explain how it might occur in the context of signals?
 ```c
-A race condition occurs when multiple threads/processes access shared data and the final result depends on the order of execution.
+A race condition occurs when multiple threads/processes access shared data
+and the final result depends on the order of execution.
+
 In Signals:
 If a signal handler modifies shared state or global variables without synchronization,
 and is triggered during modification, inconsistent results or crashes may occur.
