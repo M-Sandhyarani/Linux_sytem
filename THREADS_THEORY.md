@@ -1,11 +1,13 @@
 ### Why are we using pthread_create() instead of clone() for creating threads?
 ```c
 pthread_create() is a high-level, standardized API defined by POSIX for thread creation.
-It abstracts the complexity of clone() (a Linux-specific, low-level system call) and provides portability, safety, and ease of use.
+It abstracts the complexity of clone()
+ (a Linux-specific, low-level system call) and provides portability, safety, and ease of use.
 ```
 #### Why does a stack grow?
 ```c
-A stack grows (usually downward in memory) when a function is called and local variables or return addresses are pushed onto the stack.
+A stack grows (usually downward in memory) when a function is called and local variables
+ or return addresses are pushed onto the stack.
  It allows nested function calls and maintains execution context.
 ```
 #### What segments are shared by multiple threads within a process?
@@ -23,7 +25,8 @@ Yes, using pthread_join(thread, &retval); where retval gets the return value fro
 ```
 #### What happens when main() function is invoked?
 ```c
-The OS loads the program, initializes stack, heap, and other runtime structures, then jumps to main() function as the entry point of execution.
+The OS loads the program, initializes stack, heap, and other runtime structures,
+then jumps to main() function as the entry point of execution.
 ```
 #### What happens when the CPU stops executing?
 ```c
@@ -32,7 +35,8 @@ In multiprogramming OS, control is transferred to another process/thread using a
 ```
 ##### During a context switch, which instruction is used to copy CPU registers to the PCB (Process Control Block)?
 ```c
-There’s no single instruction; the OS uses assembly-level code with instructions like PUSH, MOV, or saves state via SAVE_CONTEXT macros in kernel code.
+There’s no single instruction; the OS uses assembly-level code with instructions
+ like PUSH, MOV, or saves state via SAVE_CONTEXT macros in kernel code.
 ```
 #### How do you create a separate process?
 ```c
@@ -55,12 +59,14 @@ By calling pthread_create() and passing the function that handles the client or 
 ```
 #### How do you overcome synchronization issues when multiple threads access global variables?
 ```c
-Use synchronization primitives like mutexes, semaphores, condition variables, or atomic operations to protect critical sections.
+Use synchronization primitives like mutexes, semaphores,
+condition variables, or atomic operations to protect critical sections.
 ```
 #### How much CPU time is given to user-space thread and kernel-space thread?
 ```c
 - Kernel-level threads are scheduled by the kernel — they get actual CPU time.
-- User-level threads require a user-space scheduler and may not use multiple CPUs without kernel support (unless mapped to kernel threads).
+- User-level threads require a user-space scheduler and may not use multiple
+ CPUs without kernel support (unless mapped to kernel threads).
 ```
 #### Explain POSIX vs System V:
 ```c
