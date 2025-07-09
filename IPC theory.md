@@ -1,6 +1,7 @@
 ### What is meant by an IPC Mechanism? 
 ```c
-IPC (Inter-Process Communication) refers to methods used by processes (independent executing programs) to exchange data and signals with each other.
+IPC (Inter-Process Communication) refers to methods used by processes (independent executing programs)
+to exchange data and signals with each other.
 Since each process has its own memory space, IPC provides a way for them to communicate and coordinate.
 ```
 
@@ -98,7 +99,8 @@ IPC-related blocking calls include:
 ### What is meant by Named Pipes? 
 ```c
 Named Pipes (also called FIFOs) are a type of IPC mechanism that allows unrelated processes to communicate.
-Unlike unnamed pipes, named pipes have a name in the file system, so different processes can open and use them.
+Unlike unnamed pipes, named pipes have a name in the file system,
+so different processes can open and use them.
 ```
 
 ### Where is the FIFO Object created? 
