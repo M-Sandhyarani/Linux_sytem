@@ -957,7 +957,8 @@ Scenarios:
 
 ## How child process uses the memory segment of parent process?
 ```c
-After fork(), the child process gets a copy of the parent’s page table, but the actual physical frames are shared using copy-on-write (COW).
+After fork(), the child process gets a copy of the parent’s page table,
+ but the actual physical frames are shared using copy-on-write (COW).
 Both processes point to the same physical memory until either modifies it.
 COW improves performance because memory isn’t duplicated unless needed.
 
@@ -1029,7 +1030,8 @@ The OS then:
 
  ## explain about adress translation?
 ```c
-Address translation is the process of converting virtual addresses (used by processes) into physical addresses (used by hardware).
+Address translation is the process of converting virtual addresses (used by processes)
+ into physical addresses (used by hardware).
 Steps:
 CPU generates a virtual address.
     OS uses page tables to map virtual pages ➝ physical frames.
