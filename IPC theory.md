@@ -260,7 +260,8 @@ To synchronize access to shared resources (e.g., memory, files).
 ```
 ### What is meant by Synchronization? 
 ```c
-Synchronization is the coordination of concurrent processes or threads to ensure correct execution (e.g., one process writes, another reads).
+Synchronization is the coordination of concurrent processes or threads to ensure correct execution
+ (e.g., one process writes, another reads).
 Used to:
       Ensure data consistency
        Avoid race conditions
@@ -280,7 +281,8 @@ But can cause:
 
 ### Why we use mutex locks?
 ```c
-A mutex (mutual exclusion lock) is used to protect critical sections so only one thread or process can access the resource at a time.
+A mutex (mutual exclusion lock) is used to protect critical sections
+so only one thread or process can access the resource at a time.
  ```
 
 ### What is the difference between mutex locks and semaphores?
@@ -300,7 +302,8 @@ A race condition occurs when multiple processes or threads access shared data at
 ```
 ### What is meant by Deadlock? 
 ```c
-A deadlock occurs when two or more processes are waiting indefinitely for each other to release resources, and none can proceed.
+A deadlock occurs when two or more processes are waiting indefinitely
+ for each other to release resources, and none can proceed.
 Conditions for deadlock:
                       Mutual exclusion
                       Hold and wait
