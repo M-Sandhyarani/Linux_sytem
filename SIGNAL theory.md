@@ -81,7 +81,8 @@ Hardware — indirectly, by triggering exceptions that the OS converts into sign
 ```
 ## What is signal handler?
 ```c
-A signal handler is a function defined by the programmer to override the default action taken when a specific signal is received.
+A signal handler is a function defined by the programmer to override
+ the default action taken when a specific signal is received.
 
 void handle_sigint(int sig) {
     printf("Caught SIGINT (signal %d)\n", sig);
@@ -163,13 +164,16 @@ It ensures that events from various sources are associated with the correct proc
 
 Use case:
 
-In a microservices-based system, if one service crashes and sends a failure notification, another service may receive a signal or message to rollback a transaction. Correlation ensures that the signal is handled in the correct context.
+In a microservices-based system, if one service crashes and sends a failure notification,
+another service may receive a signal or message to rollback a transaction.
+Correlation ensures that the signal is handled in the correct context.
 ```
 ## Explain how a process handles a signal while it is in the ready state?
 ```c
 If a process is in the ready state (waiting to be scheduled), the kernel delays signal delivery.
 The signal is recorded (marked as pending).
-Once the process gets CPU and switches to running state, the signal is then delivered and the corresponding handler is executed before resuming normal execution.
+Once the process gets CPU and switches to running state,
+the signal is then delivered and the corresponding handler is executed before resuming normal execution.
 
 ## What is the role of the sigqueue() function in signal handling?
 
@@ -312,16 +316,19 @@ Risk of deadlocks, reentrancy issues, and race conditions if not properly synchr
 ```c
 A race condition occurs when multiple threads/processes access shared data and the final result depends on the order of execution.
 In Signals:
-If a signal handler modifies shared state or global variables without synchronization, and is triggered during modification, inconsistent results or crashes may occur.
+If a signal handler modifies shared state or global variables without synchronization,
+and is triggered during modification, inconsistent results or crashes may occur.
 volatile int counter;
 void handler(int sig) { counter++; }  // race if main also modifies counter
 ```
 ### Discuss how a deadlock situation can be caused or resolved by signal handling?
 ```c
 Deadlock Caused By Signals:
-If a signal handler tries to acquire a mutex or semaphore already held by the interrupted code, it can cause self-deadlock.
+If a signal handler tries to acquire a mutex or semaphore already held by the interrupted code,
+ it can cause self-deadlock.
 Deadlock Resolved Using Signals:
-A signal (e.g., SIGALRM) can be used to interrupt a blocked process (e.g., hung on I/O or waiting on resource) and force cleanup or timeout logic.
+A signal (e.g., SIGALRM) can be used to interrupt a blocked process
+(e.g., hung on I/O or waiting on resource) and force cleanup or timeout logic.
 
 ```
 ## How can you use signals to force a process to dump core?
@@ -413,7 +420,8 @@ In Linux, this is part of the struct task_struct under members like:
 There is no SIGDEL in POSIX signals. Possibly a typo.
 To change signal behavior, simply reassign the handler for SIGINT (or any signal):
 signal(SIGINT, new_handler);
-If you're referring to changing signal numbers or semantics: you cannot rename signals, but you can override behavior via custom handlers.
+If you're referring to changing signal numbers or semantics:
+you cannot rename signals, but you can override behavior via custom handlers.
 
 ```
 ## How do you modify signal behaviour table/signal disposition
