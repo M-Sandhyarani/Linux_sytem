@@ -6,7 +6,8 @@ and ensuring efficient use of RAM and virtual memory.
 
 ## Define virtual memory.
 ```c
-Virtual memory is a memory abstraction that allows programs to use more memory than physically available by using disk storage as RAM.
+Virtual memory is a memory abstraction that allows programs to
+use more memory than physically available by using disk storage as RAM.
 ```
 
 ## Differentiate between physical memory and virtual memory.
@@ -16,7 +17,7 @@ Feature			Virtual Memory							Physical Memory
 _______________________________________________________________________________________________________________________________
 Definition	 An abstraction of memory created by the operating system	 Actual hardware RAM installed in the system	 
 Location	 Stored on both RAM and disk (swap space or page file)		 Located on physical RAM chips			 
-Access		 Accessed via logical (virtual) addresses			 Accessed via physical addresses		 
+Access		 Accessed via logical (virtual) addresses			          Accessed via physical addresses		 
 Size		 Can be larger than physical RAM (extends using disk)		 Limited by the installed RAM in the system	 
 Speed		 Slower due to disk access (if paging occurs)			 Faster since it uses hardware			 
 Purpose		 Allows more processes to run and prevents memory overflow	 Used to actually store and process program data
@@ -256,7 +257,8 @@ Moves memory contents to remove fragmentation and combine free space.
 
 ## What is memory compaction?
 ```c
-Memory compaction is the process of moving allocated memory blocks together to create larger contiguous blocks of free memory and reduce external fragmentation.
+Memory compaction is the process of moving allocated memory blocks together
+to create larger contiguous blocks of free memory and reduce external fragmentation.
 ```
 
 ### Describe the working of memory compaction algorithms.
@@ -274,12 +276,14 @@ Time-consuming in real-time systems
 
 ### Explain memory fragmentation in embedded systems.
 ```c
-Due to limited RAM, fragmentation can severely impact performance; fixed-size allocation and memory pools are often used to mitigate it.
+Due to limited RAM, fragmentation can severely impact performance;
+fixed-size allocation and memory pools are often used to mitigate it.
 ```
 
 ## How does memory allocation impact memory fragmentation?
 ```c
-Inefficient or frequent dynamic allocations cause fragmentation, especially if sizes vary greatly or are deallocated at random times.
+Inefficient or frequent dynamic allocations cause fragmentation,
+especially if sizes vary greatly or are deallocated at random times.
 ```
 
 ## Define memory mapping.
@@ -303,7 +307,8 @@ Device mapping (e.g., memory-mapped I/O)
 
 ## What is memory-mapped I/O?
 ```c
-Technique where hardware registers of devices are mapped into virtual memory, allowing device access as if reading/writing memory.
+Technique where hardware registers of devices are mapped into virtual memory,
+allowing device access as if reading/writing memory.
 
 ```
 ## Explain memory-mapped files.
@@ -360,22 +365,26 @@ Write-back and write-through caches
 ```
 ### Discuss the cache coherence problem.
 ```c
-Occurs in multiprocessor systems when different CPUs cache the same memory location and one updates it, causing inconsistencies.
+Occurs in multiprocessor systems when different CPUs cache
+the same memory location and one updates it, causing inconsistencies.
 ```
 
 ### Explain cache replacement policies.
 ```c
-Rules to decide which cache block to evict when new data needs to be loaded: LRU, FIFO, Random, LFU, etc.
+Rules to decide which cache block to evict when new data needs to be loaded:
+   LRU, FIFO, Random, LFU, etc.
 
 ```
 ## What is cache associativity?
 ```c
-Refers to how cache blocks are organized and selected for replacement: direct-mapped, set-associative, or fully associative.
+Refers to how cache blocks are organized and selected for replacement:
+ direct-mapped, set-associative, or fully associative.
 
 ```
 ## Describe the working of cache memory.
 ```c
-When the CPU accesses memory, it checks cache first. If found (hit), it uses it; otherwise (miss), it fetches from RAM and updates cache.
+When the CPU accesses memory, it checks cache first. If found (hit), it uses it;
+ otherwise (miss), it fetches from RAM and updates cache.
 ```
 ### Explain cache hit and cache miss.
 ```c
@@ -389,7 +398,8 @@ Boosts CPU performance, reduces memory latency, and lowers main memory load.
 
 ### How does cache memory relate to memory hierarchy?
 ```c
-Cache sits at the top (closest to CPU) of the memory hierarchy, offering the fastest access compared to RAM, SSD, and HDD.
+Cache sits at the top (closest to CPU) of the memory hierarchy,
+offering the fastest access compared to RAM, SSD, and HDD.
 ```
 
 ### Define memory protection.
@@ -443,5 +453,6 @@ Compatibility with legacy code
 ```
 ### How does memory protection contribute to system security?
 ```c
-Protects critical regions from unauthorized access, ensures process isolation, and is key to enforcing the principle of least privilege.
+Protects critical regions from unauthorized access, ensures process isolation,
+ and is key to enforcing the principle of least privilege.
 ```
