@@ -1,5 +1,5 @@
 ## Write a C program to catch and handle the SIGINT signal.
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -17,9 +17,9 @@ int main()
         }
         return 0;
 }
-
+```
 ## Implement a C program to send a custom signal to another process.
-
+```c
 sender:
 
 #include<stdio.h>
@@ -47,9 +47,9 @@ int main()
         while(1)pause();
 }
 
-
+```
 ## Create a C program to ignore the SIGCHLD signal temporarily.
-
+```c
 #include<signal.h>
 #include<sys/wait.h>
 #include<unistd.h>
@@ -65,9 +65,9 @@ int main()
 }
 
 
-
+```
 ## Write a program to block the SIGTERM signal using sigprocmask().
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -81,10 +81,10 @@ int main()
         while(1)pause();
 }
 
-
+```
 
 ## Implement a C program to handle the SIGALRM signal using sigaction().
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -100,10 +100,10 @@ int main()
         while(1) pause();
 }
 
-
+```
 
 ## Write a C program to install a custom signal handler for SIGTERM?
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -118,10 +118,10 @@ int main()
         while(1)pause();
 }
 
-
+```
 
 ## Implement a program to handle the SIGSEGV signal (segmentation fault).
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<stdlib.h>
@@ -138,10 +138,10 @@ int main()
         return 0;
 }
 
-
+```
 
 ## Create a program to handle the SIGILL signal (illegal instruction).
-
+```c
 #include<stdlib.h>
 #include<stdio.h>
 #include<signal.h>
@@ -156,12 +156,12 @@ int main()
         raise(SIGILL);
         return 0;
 }
-
+```
 
 
 
 ## Write a program to handle the SIGABRT signal (abort).
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<signal.h>
@@ -176,11 +176,11 @@ int main()
         abort();
         return 0;
 }
-
+```
 
 
 ## Implement a C program to handle the SIGQUIT signal.
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<signal.h>
@@ -195,9 +195,9 @@ int main()
 }
 
 
-
+```
 ## Write a program to handle the SIGTERM signal (termination request).
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -212,9 +212,9 @@ int main()
         while(1)pause();
 }
 
-
+```
 ### Write a program to handle the SIGTSTP signal (terminal stop).
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<stdlib.h>
@@ -227,10 +227,10 @@ int main()
         signal(SIGTSTP,handler);
         while(1)pause();
 }
-
+```
 
 ## Write a program to handle the SIGVTALRM signal (virtual timer expired).
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<signal.h>
@@ -247,10 +247,10 @@ int main()
         while(1);
 }
 
-
+```
 
 ### Write a program to handle the SIGWINCH signal (window size change).
-
+```c
 
 #include<stdio.h>
 #include<signal.h>
@@ -266,9 +266,9 @@ int main()
 }
 
 
-
+```
 ### Implement a C program to handle the SIGXFSZ signal (file size limit exceeded).
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -285,11 +285,11 @@ int main()
         int fd=open("big file.txt",O_WRONLY,0644);
         while(1)write(fd,"1234567890",10);
 }
-
+```
 
 
 ### Create a program to handle the SIGPWR signal (power failure restart).
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<signal.h>
@@ -303,10 +303,10 @@ int main()
         raise(SIGPWR);
         return 0;
 }
-
+```
 
 ### Write a program to handle the SIGSYS signal (bad system call).
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<signal.h>
@@ -322,9 +322,9 @@ int main()
         return 0;
 }
 
-
+```
 ### Write a C program to handle the SIGIO signal (I/O is possible on a descriptor).
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -341,9 +341,9 @@ int main()
         while(1)pause();
 }
 
-
+```
 ### Implement a C program to handle the SIGINFO signal (status request from keyboard).
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<signal.h>
@@ -359,11 +359,11 @@ int main()
 #endif
         while(1)pause();
 }
-
+```
 
 
 ### Create a C program to handle the SIGRTMIN signal (minimum real-time signal).
-
+```c
 #include <signal.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -377,9 +377,9 @@ int main() {
 }
 
 
-
+```
 ### Implement a program to handle the SIGRTMAX signal (maximum real-time signal).
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<signal.h>
@@ -396,9 +396,9 @@ int main()
 }
 
 
-
+```
 ## Create a C program to handle the SIGSEGV_SIGBUS signal (segmentation fault or bus error).
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<stdlib.h>
@@ -415,10 +415,10 @@ int main()
         int *p=NULL;
         *p=1;
 }
-
+```
 
 ### Implement a program to handle the SIGUSR1_SIGUSR2 signal (user-defined signal).
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<stdlib.h>
@@ -437,9 +437,9 @@ int main()
 }
 
 
-
+```
 ### Create a C program to handle the SIGCONT_SIGSTOP signal (continue or stop executing).
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<stdlib.h>
@@ -455,9 +455,9 @@ int main()
 }
 
 
-
+```
 ## Write a program to implement a timer using signals.
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -471,11 +471,11 @@ int main()
         alarm(3);
         pause();
 }
-
+```
 
 
 ## Write a program to handle a real-time signal using sigqueue().
-
+```c
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -502,9 +502,9 @@ int main()
 
 
 
-
+```
 ## Why we use raise system call explain it programmatically
-
+```c
 The raise() system call is used to send a signal to the calling process itself.
 Purpose of raise():
       To intentionally send a signal to your own process.
@@ -535,11 +535,11 @@ int main()
         return 0;
 }
 
-
+```
 
 ## Write a program to handle SIGALRM (alarm clock) signal for implementing a
 timeout mechanism in system programming.
-
+```c
 
 #include<stdio.h>
 #include<signal.h>
@@ -563,10 +563,10 @@ int main()
 }
 
 
-
+```
 
 ## Write a c program on pause system call
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -583,10 +583,9 @@ int main()
         return 0;
 }
 
-
-
+```
 ## Create a C program to handle the SIGTRAP signal (trace/breakpoint trap).
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<signal.h>
@@ -603,10 +602,10 @@ int main()
         return 0;
 }
 
-
+```
 
 ## Create a C program to handle the SIGWINCH_SIGINFO signal (window size change or status request from keyboard).
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<signal.h>
@@ -625,12 +624,12 @@ int main()
         while(1)pause();
 }
 
-
+```
 
 ## Implement a program to handle the SIGSYS_SIGPIPE signal (bad system call or
 write on a pipe with no one to read it).
 
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<signal.h>
@@ -651,11 +650,11 @@ int main()
         write(fd[1],"test",4);
 }
 
-
+```
 
 ## Write a program to handle the SIGURG_SIGTSTP signal (urgent condition on socket or stop signal).
 
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -672,10 +671,10 @@ int main()
 }
 
 
-
+```
 ## Implement a program to handle the SIGTTIN_SIGTTOU signal (background read or
 write attempted from control terminal).
-
+```c
 
 #include<stdio.h>
 #include<signal.h>
@@ -693,10 +692,10 @@ int main()
 }
 
 
-
+```
 ## Create a C program to handle the SIGXCPU_SIGXFSZ signal (CPU time limit
 exceeded or file size limit exceeded).
-
+```c
 
 #include<stdio.h>
 #include<signal.h>
@@ -723,10 +722,10 @@ int main()
         while(1);
 }
 
-
+```
 
 ### Implement a program to handle the SIGVTALRM_SIGWINCH signal (virtual timer expired or window size change).
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -744,10 +743,10 @@ int main()
         setitimer(ITIMER_VIRTUAL,&timer,NULL);
         while(1);
 }
-
+```
 
 ### Write a program to demonstrate how to handle and recover from a segmentation fault (SIGSEGV) in a system programming scenario.
-
+```
 #include<stdio.h>
 #include<signal.h>
 #include<setjmp.h>
@@ -771,11 +770,11 @@ int main()
         return 0;
 }
 
-
+```
 
 ## Write a program to demonstrate the use of sigaction() for handling signal
 
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -799,10 +798,10 @@ int main()
         return 0;
 }
 
-
+```
 
 ## Write a program to demonstrate signal handling in a multithreaded environment.
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -819,10 +818,10 @@ int main()
         while(1)pause();
 }
 
-
+```
 
 ## Write a program to handle the SIGTSTP signal and suspend the process.
-
+```c
 
 #include<stdio.h>
 #include<signal.h>
@@ -842,11 +841,11 @@ int main()
         return 0;
 }
 
-
+```
 
 ## Write a program to demonstrate IPC using signals.
 
-
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<signal.h>
@@ -871,9 +870,9 @@ int main()
         return 0;
 }
 
-
+```
 ## Write a program to demonstrate signal handling during fork() and exec().
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -900,11 +899,11 @@ int main()
         return 0;
 }
 
-
+```
 ## Write a program to demonstrate how to block and unblock signals using
 sigprocmask() in a system programming context.
 
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -926,10 +925,10 @@ int main()
         while(1)pause();
 }
 
-
+```
 
 ## Write a program to demonstrate the usage of sigaction() for handling SIGUSR1 and SIGUSR2 signals in a system programming scenario
-
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<unistd.h>
@@ -946,11 +945,11 @@ int main()
         while(1)pause();
 }
 
-
+```
 
 ## Create a C program to handle the SIGCHLD_SIGCONT signal (child process
 terminated or continue executing).
-
+```c
 
 #include<stdio.h>
 #include<sys/wait.h>
@@ -978,12 +977,12 @@ int main()
         }
         while(1)pause();
 }
-
+```
 
 ### Write a program to handle the SIGBUS_SIGCHLD signal (bus error or child process
 terminated).
 
-
+```c
 #include<stdio.h>
 #include<sys/wait.h>
 #include<stdlib.h>
@@ -1008,10 +1007,10 @@ int main()
         pause();
 }
 
-
+```
 
 ## Implement a program to handle the SIGPWR_SIGSYS signal (power fa*iilure restart or bad system call).
-
+```c
 #include<stdio.h>
 #include<stdlib.h>
 #include<signal.h>
@@ -1031,9 +1030,9 @@ int main()
 }
 
 
-
+```
 ## Write a program to handle the SIGPIPE_SIGQUIT signal (write on a pipe with no one to read it or quit signal).
-
+```c
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -1057,4 +1056,4 @@ int main()
 }
 
 
-
+```
