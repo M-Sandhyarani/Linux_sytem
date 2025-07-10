@@ -746,7 +746,7 @@ int main()
 ```
 
 ### Write a program to demonstrate how to handle and recover from a segmentation fault (SIGSEGV) in a system programming scenario.
-```
+```c
 #include<stdio.h>
 #include<signal.h>
 #include<setjmp.h>
